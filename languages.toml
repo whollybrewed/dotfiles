@@ -1,0 +1,37 @@
+[[language]]
+name = "python"
+language-servers = ["pyright", "ruff"]
+roots = ["pyproject.toml", "setup.py", ".project", ".pydevproject", ".git"]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = [ "--stdio" ]
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+autoImportCompletions = false
+extraPaths = ["~/container-packages"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+[language-server.ruff.config.settings]
+args = ["--ignore", "E501, E402"]
+[language-server.ruff.config.settings.lint]
+select = ["W"]
+
+[[language]]
+name = "bash"
+shebangs = ["sh", "bash", "bats"]
+file-types = ["sh"]
+
+[[language]]
+name = "tcl"
+shebangs = ["expect"]
+
+[[language]]
+name = "c"
+language-servers = ["clangd"]
+
+[language-server.clangd]
+command = "clangd"
+args = ["--compile-commands-dir=build"]
