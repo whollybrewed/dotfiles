@@ -130,3 +130,11 @@ bind 'set colored-stats on'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pbcopy alias
+alias pbcopy='xclip -selection clipboard'
+
+# nrfutil completion
+if [ -f ~/.nrfutil/share/nrfutil-completion/scripts/bash/setup.bash ]; then
+    . ~/.nrfutil/share/nrfutil-completion/scripts/bash/setup.bash
+fi
