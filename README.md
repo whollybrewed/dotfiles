@@ -9,6 +9,7 @@ configure helix
 - install pyright
 - install ruff
 - install clangd
+- install groovy lsp from [GitHub](https://github.com/GroovyLanguageServer/groovy-language-server)
 - configure config.toml
 - configure languages.toml
 
