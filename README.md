@@ -1,6 +1,7 @@
 # dotfiles
 
 configure .bashrc
+
 configure .vimrc
 
 configure helix
@@ -17,6 +18,6 @@ configure tmux
 - install tmux from [GitHub](https://github.com/tmux/tmux)
 - install tpm from [GitHub](https://github.com/tmux-plugins/tpm)
 - configure .tmux.conf
-- install gitmux
+- install gitmux from [GitHub](https://github.com/arl/gitmux)
 - configure .gitmux.conf
 - Run `prefix + I` to install all plugins
