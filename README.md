@@ -5,7 +5,7 @@ configure .vimrc
 
 configure helix
 - install helix from [GitHub](https://github.com/helix-editor/helix)
-- install nodejs, nvm, npm fomr [nodejs.org](https://nodejs.org/en/download/)
+- install nodejs, nvm, npm from [nodejs.org](https://nodejs.org/en/download/)
 - install pyright
 - install ruff
 - install clangd
