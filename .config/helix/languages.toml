@@ -1,3 +1,4 @@
+########## Python ########## 
 [[language]]
 name = "python"
 language-servers = ["pyright", "ruff"]
@@ -19,19 +20,33 @@ args = ["--ignore", "E501, E402"]
 [language-server.ruff.config.settings.lint]
 select = ["W"]
 
+########## Bash ########## 
 [[language]]
 name = "bash"
 shebangs = ["sh", "bash", "bats"]
 file-types = ["sh"]
 
+########## TCL ########## 
 [[language]]
 name = "tcl"
 shebangs = ["expect"]
 
+########## C ########## 
 [[language]]
 name = "c"
 language-servers = ["clangd"]
 
 [language-server.clangd]
 command = "clangd"
-args = ["--compile-commands-dir=build"]
+# args = ["--compile-commands-dir=build"]
+
+########## Groovy ########## 
+[[language]]
+name = "groovy"
+scope = "source.groovy"
+file-types = ["groovy", "gradle", "Jenkinsfile", "nf"]
+language-servers = ["groovyls"]
+
+[language-server.groovyls]
+command = "java"
+args = ["-jar", "/home/anle/groovy-language-server/build/libs/groovy-language-server-all.jar"]

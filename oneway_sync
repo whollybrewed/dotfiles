@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# One-way sync ONLY: $HOME -> current directory
+# Default: DRY-RUN. Use --apply to actually copy.
+# Supports an ignore list (rsync --exclude patterns).
+
+SOURCE_DIR="${HOME}"
+DEST_DIR="$(pwd)"
+
+# Explicit allow-list
+FILES=(
+  ".bashrc"
+  ".gitmux.conf"
+  ".tmux.conf"
+  ".vimrc"
+  ".config/helix/config.toml"
+  ".config/helix/languages.toml"
+)
+
+# Ignore patterns (rsync-style).
+# Keep .git excluded in case expanding the script.
+IGNORE=(
+  ".git/"
+  ".DS_Store"
+  "Thumbs.db"
+  "*~"
+  "*.swp"
+  "*.swo"
+  ".cache/"
+  "*.md"
+)
+
+APPLY=0
+if [[ "${1:-}" == "--apply" ]]; then
+  APPLY=1
+elif [[ $# -gt 0 ]]; then
+  echo "Usage: $0 [--apply]" >&2
+  exit 2
+fi
+
+RSYNC_FLAGS=(
+  "-av"
+  "--checksum"
+  "--no-perms" "--no-owner" "--no-group"
+)
+
+if [[ "$APPLY" -eq 0 ]]; then
+  RSYNC_FLAGS+=("--dry-run")
+  echo "DRY-RUN: showing what would change. Re-run with --apply to actually sync."
+else
+  echo "APPLY: syncing files now."
+fi
+
+# Add exclude patterns
+for pat in "${IGNORE[@]}"; do
+  RSYNC_FLAGS+=( "--exclude=${pat}" )
+done
+
+echo "One-way sync: ${SOURCE_DIR}/  ->  ${DEST_DIR}/"
+echo "====================================================="
+
+for f in "${FILES[@]}"; do
+  src="${SOURCE_DIR}/${f}"
+  dst="${DEST_DIR}/${f}"
+
+  if [[ -e "$src" ]]; then
+    echo "Syncing: $src"
+    mkdir -p "$(dirname "$dst")"
+    rsync "${RSYNC_FLAGS[@]}" "$src" "$dst"
+    echo "====================================================="
+  else
+    echo "WARN: source missing, skipping: $src" >&2
+  fi
+done
+
+echo
+echo "Done."
