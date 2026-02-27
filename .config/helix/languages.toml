@@ -50,3 +50,12 @@ language-servers = ["groovyls"]
 [language-server.groovyls]
 command = "java"
 args = ["-jar", "/home/anle/groovy-language-server/build/libs/groovy-language-server-all.jar"]
+
+########## Git-commit ########## 
+[[language]]
+name = "git-commit"
+language-servers = [ "harper-ls" ]
+
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]

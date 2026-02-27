@@ -68,7 +68,15 @@ for f in "${FILES[@]}"; do
   if [[ -e "$src" ]]; then
     echo "Syncing: $src"
     mkdir -p "$(dirname "$dst")"
-    rsync "${RSYNC_FLAGS[@]}" "$src" "$dst"
+    rsync_output=$(rsync "${RSYNC_FLAGS[@]}" "$src" "$dst")
+    changes=$(echo "$rsync_output" |
+      awk '/^sending incremental file list/{flag=1;next}/^sent /{flag=0}flag')
+    if [ -n "$changes" ]; then
+      echo -e "\033[33m$rsync_output\033[0m"
+    else
+      echo "No change"
+    fi
+    # rsync "${RSYNC_FLAGS[@]}" "$src" "$dst"
     echo "====================================================="
   else
     echo "WARN: source missing, skipping: $src" >&2

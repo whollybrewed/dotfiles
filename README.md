@@ -11,6 +11,7 @@ configure helix
 - install ruff
 - install clangd
 - install groovy lsp from [GitHub](https://github.com/GroovyLanguageServer/groovy-language-server)
+- install harper-ls from [GitHub](https://github.com/Automattic/harper)
 - configure config.toml
 - configure languages.toml
 
