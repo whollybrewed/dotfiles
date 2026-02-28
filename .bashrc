@@ -132,9 +132,16 @@ export NVM_DIR="$HOME/.nvm"
 # pbcopy alias
 alias pbcopy='xclip -selection clipboard'
 
+# nrfutil completion
+if [ -f ~/.nrfutil/share/nrfutil-completion/scripts/bash/setup.bash ]; then
+    . ~/.nrfutil/share/nrfutil-completion/scripts/bash/setup.bash
+fi
+
+# alias for zephyr venv
+alias venv_active='source ~/IronSide_SE/.venv/bin/activate'
+
 # alias for opening fzf path
 alias find_open='hx $(fzf)'
 
 # alias for copying fzf path
 alias find_copy='fzf | wl-copy'
-
