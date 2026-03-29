@@ -12,6 +12,7 @@ configure helix
 - install clangd
 - install groovy lsp from [GitHub](https://github.com/GroovyLanguageServer/groovy-language-server)
 - install harper-ls from [GitHub](https://github.com/Automattic/harper)
+- install lua-language-server from [GitHub](https://github.com/LuaLS/lua-language-server)
 - configure config.toml
 - configure languages.toml
 

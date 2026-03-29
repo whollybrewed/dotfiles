@@ -138,3 +138,5 @@ alias find_open='hx $(fzf)'
 # alias for copying fzf path
 alias find_copy='fzf | wl-copy'
 
+# Lua LSP
+export PATH="$HOME/lua-lsp/bin"

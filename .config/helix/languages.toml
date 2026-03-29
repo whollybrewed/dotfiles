@@ -59,3 +59,17 @@ language-servers = [ "harper-ls" ]
 [language-server.harper-ls]
 command = "harper-ls"
 args = ["--stdio"]
+
+########## Markdown ########## 
+[[language]]
+name = "markdown"
+language-servers = ["harper-ls"]
+
+########## Lua ##########
+[[language]]
+name = "lua"
+language-servers = ["lua-language-server"]
+
+[language-server.lua-language-server]
+command = "lua-language-server"
+args = ["--stdio"]
