@@ -73,3 +73,5 @@ language-servers = ["lua-language-server"]
 [language-server.lua-language-server]
 command = "lua-language-server"
 args = ["--stdio"]
+[language-server.lua-language-server.config.Lua]
+workspace.library = ["/home/ander/lua-lsp/meta/3rd/love2d"]
