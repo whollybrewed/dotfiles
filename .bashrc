@@ -145,3 +145,6 @@ alias find_open='hx $(fzf)'
 
 # alias for copying fzf path
 alias find_copy='fzf | wl-copy'
+
+# alias for finding processes
+alias psfind='ps -eo user,pid,stat,command | fzf --exact --ignore-case -q'
