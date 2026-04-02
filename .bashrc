@@ -140,3 +140,7 @@ alias find_copy='fzf | wl-copy'
 
 # Lua LSP
 export PATH="$PATH:$HOME/lua-lsp/bin"
+
+# alias for finding processes
+alias psfind='ps -eo user,pid,stat,command | fzf --exact --ignore-case -q'
+
