@@ -63,15 +63,22 @@ args = ["--stdio"]
 ########## Markdown ########## 
 [[language]]
 name = "markdown"
+text-width = 80
 language-servers = ["harper-ls"]
+rulers = [80]
 
 ########## Lua ##########
 [[language]]
 name = "lua"
-language-servers = ["lua-language-server"]
+# indent = { tab-width = 2, unit = "  " }
+language-servers = ["lua-language-server", "stylua"]
 
 [language-server.lua-language-server]
 command = "lua-language-server"
 args = ["--stdio"]
 [language-server.lua-language-server.config.Lua]
 workspace.library = ["/home/ander/lua-lsp/meta/3rd/love2d"]
+
+[language-server.stylua]
+command = "stylua"
+args = ["--lsp"]
