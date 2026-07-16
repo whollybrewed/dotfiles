@@ -144,3 +144,11 @@ export PATH="$PATH:$HOME/lua-lsp/bin"
 # alias for finding processes
 alias psfind='ps -eo user,pid,stat,command | fzf --exact --ignore-case -q'
 
+# cargo binary
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$HOME/.local/bin:$PATH"
+
+# nrfutil completion
+if [ -f ~/.nrfutil/share/nrfutil-completion/scripts/bash/setup.bash ]; then
+    . ~/.nrfutil/share/nrfutil-completion/scripts/bash/setup.bash
+fi
