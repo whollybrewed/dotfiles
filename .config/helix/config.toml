@@ -27,5 +27,7 @@ pagedown = "no_op"
 home = "no_op"
 end = "no_op"
 
-[keys.normal]
-space.B = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
+[keys.normal.space.z]
+B = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
+M = ':sh tmux sph "leaf -w %{buffer_name}"'
+G = ':sh tmux sph "git diff --color HEAD -- \"%{buffer_name}\" | less -R"'

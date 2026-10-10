@@ -1,0 +1,10 @@
+[Unit]
+Description=Sync Documents to DietPi (mirror + trash)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/ander/misc-scripts/sync_samba
+StandardOutput=append:%h/.local/state/sync-dietpi.log
+StandardError=append:%h/.local/state/sync-dietpi.log

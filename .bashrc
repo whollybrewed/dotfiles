@@ -152,3 +152,4 @@ export PATH="$HOME/.local/bin:$PATH"
 if [ -f ~/.nrfutil/share/nrfutil-completion/scripts/bash/setup.bash ]; then
     . ~/.nrfutil/share/nrfutil-completion/scripts/bash/setup.bash
 fi
+source /home/ander/.local/share/leaf/completions/leaf.bash
