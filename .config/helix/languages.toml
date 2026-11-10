@@ -10,7 +10,6 @@ args = [ "--stdio" ]
 [language-server.pyright.config.python.analysis]
 typeCheckingMode = "basic"
 autoImportCompletions = false
-extraPaths = ["~/container-packages"]
 
 [language-server.ruff]
 command = "ruff"
@@ -39,17 +38,6 @@ language-servers = ["clangd"]
 [language-server.clangd]
 command = "clangd"
 args = ["--background-index"]
-
-########## Groovy ########## 
-[[language]]
-name = "groovy"
-scope = "source.groovy"
-file-types = ["groovy", "gradle", "Jenkinsfile", "nf"]
-language-servers = ["groovyls"]
-
-[language-server.groovyls]
-command = "java"
-args = ["-jar", "/home/anle/groovy-language-server/build/libs/groovy-language-server-all.jar"]
 
 ########## Git-commit ########## 
 [[language]]

@@ -10,9 +10,9 @@ configure helix
 - install pyright
 - install ruff
 - install clangd
-- install groovy lsp from [GitHub](https://github.com/GroovyLanguageServer/groovy-language-server)
 - install harper-ls from [GitHub](https://github.com/Automattic/harper)
 - install lua-language-server from [GitHub](https://github.com/LuaLS/lua-language-server)
+- install stylua from [GitHub](https://github.com/JohnnyMorganz/StyLua)
 - configure config.toml
 - configure languages.toml
 
